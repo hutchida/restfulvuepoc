@@ -93,8 +93,7 @@
         <b-form-group
           id="form-author-edit-group"
           label="Author:"
-          label-for="form-author-edit-input"
-        >
+          label-for="form-author-edit-input">
           <b-form-input
             id="form-author-edit-input"
             type="text"
