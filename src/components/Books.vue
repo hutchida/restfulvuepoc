@@ -25,13 +25,13 @@
           </thead>
           <tbody>
             <tr v-for="(book, index) in books" :key="index">
-              <td>{{ book.title }}</td>
-              <td>{{ book.author }}</td>
-              <td>
+              <td  v-if="book.isVisible">{{ book.title }}</td>
+              <td  v-if="book.isVisible">{{ book.author }}</td>
+              <td  v-if="book.isVisible">
                 <span v-if="book.read">Yes</span>
                 <span v-else>No</span>
               </td>
-              <td>
+              <td  v-if="book.isVisible">
                 <button
                   type="button"
                   class="btn btn-warning btn-sm"
@@ -44,6 +44,7 @@
                   @click="onDeleteBook(book)"
                 >Delete</button>
               </td>
+
             </tr>
           </tbody>
         </table>
@@ -251,7 +252,13 @@ export default {
       this.initForm();
     },
     onSearch(){
-      this.books = this.books.filter(book => book.title.includes(this.searchTerm));
+      this.books.foreach(book => {
+        if(this.searchTerm){
+          book.isVisible = book.title.includes(this.searchTerm)
+        } else {
+          book.isVisible = true;
+        }
+      });
     }
   },
   created() {

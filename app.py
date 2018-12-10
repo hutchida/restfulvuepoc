@@ -22,19 +22,22 @@ BOOKS = [
         'id': uuid.uuid4().hex,
         'title': 'On the Road',
         'author': 'Jack Kerouac',
-        'read': True
+        'read': True,
+        'isVisible': True
     },
     {
         'id': uuid.uuid4().hex,
         'title': 'Harry Potter and the Philosopher\'s Stone',
         'author': 'J. K. Rowling',
-        'read': False
+        'read': False,
+        'isVisible': True
     },
     {
         'id': uuid.uuid4().hex,
         'title': 'Green Eggs and Ham',
         'author': 'Dr. Seuss',
-        'read': True
+        'read': True,
+        'isVisible': True
     }
 ]
 
