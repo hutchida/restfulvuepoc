@@ -25,13 +25,13 @@
           </thead>
           <tbody>
             <tr v-for="(book, index) in books" :key="index">
-              <td  v-if="book.isVisible">{{ book.title }}</td>
-              <td  v-if="book.isVisible">{{ book.author }}</td>
-              <td  v-if="book.isVisible">
+              <td>{{ book.title }}</td>
+              <td>{{ book.author }}</td>
+              <td>
                 <span v-if="book.read">Yes</span>
                 <span v-else>No</span>
               </td>
-              <td  v-if="book.isVisible">
+              <td>
                 <button
                   type="button"
                   class="btn btn-warning btn-sm"

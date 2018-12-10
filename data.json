@@ -1,0 +1,19 @@
+[{
+        "title": "Dharma Bums",
+        "author": "Jack Kerouac",
+        "read": true,
+        "isVisible": true
+    },
+    {
+        "title": "The Art of the Deal",
+        "author": "Trump Cunt",
+        "read": false,
+        "isVisible": true
+    },
+    {
+        "title": "The Master and Margerita",
+        "author": "Mikael Bulkgakov",
+        "read": true,
+        "isVisible": true
+    }
+    ]

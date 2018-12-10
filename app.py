@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 import uuid
+import json
 
 # configuration
 DEBUG = True
@@ -17,31 +18,14 @@ CORS(app)
 def ping_pong():
     return jsonify('pong!')
 
-BOOKS = [
-    {
-        'id': uuid.uuid4().hex,
-        'title': 'On the Road',
-        'author': 'Jack Kerouac',
-        'read': True,
-        'isVisible': True
-    },
-    {
-        'id': uuid.uuid4().hex,
-        'title': 'Harry Potter and the Philosopher\'s Stone',
-        'author': 'J. K. Rowling',
-        'read': False,
-        'isVisible': True
-    },
-    {
-        'id': uuid.uuid4().hex,
-        'title': 'Green Eggs and Ham',
-        'author': 'Dr. Seuss',
-        'read': True,
-        'isVisible': True
-    }
-]
+#load json from local file
+with open('data.json') as data_file:
+    data_loaded = json.load(data_file)
+#loop through json entries and add unique id before working with the data
+for entry in data_loaded:
+    entry['id'] = uuid.uuid4().hex
 
-
+BOOKS = data_loaded
 
 @app.route('/books', methods=['GET', 'POST'])
 def all_books():
