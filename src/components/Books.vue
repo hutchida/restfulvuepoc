@@ -10,8 +10,7 @@
         <button type="button" class="btn btn-success btn-sm" v-b-modal.book-modal>Add Book</button>
         <br>
         <br>
-        <input v-model="searchTerm" placeholder="Search book">
-        <button v-on:click="onSearch">Search</button>
+        <input v-model="searchTerm" class="form-control" placeholder="Search books"  v-on:input="onSearch">
         <br>
         <br>
         <table class="table table-hover">
@@ -25,26 +24,27 @@
           </thead>
           <tbody>
             <tr v-for="(book, index) in books" :key="index">
-              <td  v-if="book.isVisible">{{ book.title }}</td>
-              <td  v-if="book.isVisible">{{ book.author }}</td>
-              <td  v-if="book.isVisible">
-                <span v-if="book.read">Yes</span>
-                <span v-else>No</span>
-              </td>
-              <td  v-if="book.isVisible">
-                <button
-                  type="button"
-                  class="btn btn-warning btn-sm"
-                  v-b-modal.book-update-modal
-                  @click="editBook(book)"
-                >Update</button>
-                <button
-                  type="button"
-                  class="btn btn-danger btn-sm"
-                  @click="onDeleteBook(book)"
-                >Delete</button>
-              </td>
-
+              <template v-if="book.isVisible">
+                <td>{{ book.title }}</td>
+                <td>{{ book.author }}</td>
+                <td>
+                  <span v-if="book.read">Yes</span>
+                  <span v-else>No</span>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-warning btn-sm"
+                    v-b-modal.book-update-modal
+                    @click="editBook(book)"
+                  >Update</button>
+                  <button
+                    type="button"
+                    class="btn btn-danger btn-sm"
+                    @click="onDeleteBook(book)"
+                  >Delete</button>
+                </td>
+              </template>
             </tr>
           </tbody>
         </table>
@@ -252,10 +252,18 @@ export default {
       this.initForm();
     },
     onSearch(){
-      this.books.foreach(book => {
-        if(this.searchTerm){
-          book.isVisible = book.title.includes(this.searchTerm)
+      // Loop over each book in array.
+      this.books.map(book => {
+
+        // If we have a search term and the length is > 2 characters proceed...
+        if(this.searchTerm && this.searchTerm.length > 2){
+
+          // Set book to visible if book title includes search term.
+          book.isVisible = book.title.includes(this.searchTerm);
+
         } else {
+
+          // On all other senarios set book visible to true.
           book.isVisible = true;
         }
       });
