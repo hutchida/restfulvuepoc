@@ -1,0 +1,20 @@
+{
+    "files.exclude": {
+        ".editorconfig": true,
+        ".babelrc": true,
+        ".vscode": true,
+        "**/.DS_Store": true,
+        "**/.git": true,
+        "**/.hg": true,
+        "**/.svn": true,
+        "**/CVS": true,
+        "**/node_modules": true,
+        ".gitignore": true,
+        ".eslintignore": true,
+        ".eslintrc.js": true,
+        ".postcssrc.js": true,
+        "package-lock.json": true,
+        "__pycache__": true,
+        "static/": false
+        }
+}
