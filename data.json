@@ -1,19 +1,26 @@
-[{
-        "title": "Dharma Bums",
-        "author": "Jack Kerouac",
+[
+    {
+        "author": "Surf",
+        "id": "729059877b2d41089458de95722e2230",
         "read": true,
-        "isVisible": true
+        "title": "Famara"
     },
     {
-        "title": "The Art of the Deal",
-        "author": "Trump Cunt",
+        "author": "And the Jing Jang Jong",
+        "id": "d88c2004b8ef4173b40234422614bfd4",
         "read": false,
-        "isVisible": true
+        "title": "Joe Lean"
     },
     {
-        "title": "The Master and Margerita",
-        "author": "Mikael Bulkgakov",
+        "author": "Ralph Fiennes",
+        "id": "dcb0890d5b844538a0ddcd9c86cb0301",
         "read": true,
-        "isVisible": true
+        "title": "Your Cunty Kids"
+    },
+    {
+        "author": "Slam",
+        "id": "a8f7511efe3e4f13b6be676a963fa4ab",
+        "read": false,
+        "title": "Tim Tam"
     }
-    ]
+]
