@@ -14,13 +14,6 @@
         "title": "Have You Done the G?"
     },
     {
-        "author": "Jezzles",
-        "id": "96242a29931b456e88e9642353310a37",
-        "isVisible": "true",
-        "read": false,
-        "title": "Big Purple Whoppa"
-    },
-    {
         "author": "Shawry Shaw",
         "id": "bb0037747b32414db493d6b07424b5e1",
         "isVisible": "true",
@@ -33,5 +26,187 @@
         "isVisible": true,
         "read": true,
         "title": "Your Cunty Kids"
+    },
+    {
+        "author": "Jezzles",
+        "id": "96242a29931b456e88e9642353310a37",
+        "isVisible": "true",
+        "read": false,
+        "title": "Big Purple Dong"
+    },
+    {
+        "author": "Jack Kerouac",
+        "id": "610f2765188f4c6d9df29e792c3338ee",
+        "isVisible": "true",
+        "read": true,
+        "title": "Satori in Paris"
+    },
+    {
+        "author": "Doris Lessing",
+        "id": "131083ea856b4a66aef8c4c3102ca7e1",
+        "isVisible": "true",
+        "read": true,
+        "title": "The Sea, The Sea"
+    },
+    {
+        "author": "F Scott Fitzgerald",
+        "id": "206a93d2c4dd4365bd825d77d81bf77c",
+        "isVisible": "true",
+        "read": true,
+        "title": "Tender Is the Night"
+    },
+    {
+        "author": "Michael Gove",
+        "id": "0dc2100a05a641679768caf9c027b7cb",
+        "isVisible": "true",
+        "read": false,
+        "title": "Brexit"
+    },
+    {
+        "author": "Boris Johnson",
+        "id": "e81b0cd72cf14140bb6b43ac1925c2f4",
+        "isVisible": "true",
+        "read": true,
+        "title": "How to Shaft a Nation"
+    },
+    {
+        "author": "Theresa May",
+        "id": "3b7645db9137471d91b66605b023417f",
+        "isVisible": "true",
+        "read": true,
+        "title": "Dead Man Walking"
+    },
+    {
+        "author": "David Camercon",
+        "id": "915a7b5994504fbb9f7c2e9a694f5540",
+        "isVisible": "true",
+        "read": false,
+        "title": "Suck My Goldman Sachs"
+    },
+    {
+        "author": "Ian Duncan Smith",
+        "id": "f719f62c4c054fd7aa202e8cc110153c",
+        "isVisible": "true",
+        "read": false,
+        "title": "Most Loathsome Tory"
+    },
+    {
+        "author": "Jeremy Corbyn",
+        "id": "46e77fad2f2f4132971db4a6c56d5808",
+        "isVisible": "true",
+        "read": false,
+        "title": "Sock Puppet"
+    },
+    {
+        "author": "Seamus Milne",
+        "id": "cba61bc21fcd4539b1cf0cd672843245",
+        "isVisible": "true",
+        "read": false,
+        "title": "The Puppet Master"
+    },
+    {
+        "author": "The Kremlin",
+        "id": "e2577ff4ec6a4ed89c4a28094dfef0c1",
+        "isVisible": "true",
+        "read": false,
+        "title": "Troll Factories"
+    },
+    {
+        "author": "Julian Assange",
+        "id": "73b123a849594be6a1b6685821d8c43d",
+        "isVisible": "true",
+        "read": false,
+        "title": "Fake News"
+    },
+    {
+        "author": "Trump Cunt",
+        "id": "646dd11d2d7c4f41bd518256767a2e72",
+        "isVisible": "true",
+        "read": true,
+        "title": "The Art of the Deal"
+    },
+    {
+        "author": "Jason Donovan",
+        "id": "d253409ad3ed4f4a9e95fdd0eccce3e5",
+        "isVisible": "true",
+        "read": false,
+        "title": "Too Many Broken Hearts"
+    },
+    {
+        "author": "Kylie Minogue",
+        "id": "70aee022866042b381598f356a1bc6ee",
+        "isVisible": "true",
+        "read": false,
+        "title": "Especially For You"
+    },
+    {
+        "author": "George Michael",
+        "id": "19c88d3c0235414aaf8da06243474d3e",
+        "isVisible": "true",
+        "read": false,
+        "title": "Saddest Celebrity Death"
+    },
+    {
+        "author": "Wham!",
+        "id": "cd38d325b2be498e9711ee05554582e2",
+        "isVisible": "true",
+        "read": false,
+        "title": "Everything She Wants"
+    },
+    {
+        "author": "Neil Young",
+        "id": "58bc57e45e6449ecaa9429e6485e13dd",
+        "isVisible": "true",
+        "read": true,
+        "title": "Harvest Moon"
+    },
+    {
+        "author": "Neil Young",
+        "id": "c3be48197bdb480488230ceb43b06874",
+        "isVisible": "true",
+        "read": false,
+        "title": "Needle and the Damage Done"
+    },
+    {
+        "author": "Robin Wright",
+        "id": "1de4e8d464de4b5285d3a166867bb59e",
+        "isVisible": "true",
+        "read": false,
+        "title": "House of Cards"
+    },
+    {
+        "author": "Doug Stanhope",
+        "id": "2ee36e501300446c84d09bdd5b078d6a",
+        "isVisible": "true",
+        "read": false,
+        "title": "How to Talk Whisper"
+    },
+    {
+        "author": "Haven't Seen It Yet",
+        "id": "9c17ac2249cb48eda6e7cbfa27d88fc1",
+        "isVisible": "true",
+        "read": false,
+        "title": "Narcos Mexico"
+    },
+    {
+        "author": "Loved It",
+        "id": "6d29ca30106a4fc88f6f21b5ff2aee0d",
+        "isVisible": "true",
+        "read": false,
+        "title": "Dear White People"
+    },
+    {
+        "author": "James Bond",
+        "id": "e4f12f882b5f4ec18322177afe24674e",
+        "isVisible": "true",
+        "read": false,
+        "title": "Goldfinger"
+    },
+    {
+        "author": "Ian Fleming",
+        "id": "4390c0ded0904341852ae35179ebbd93",
+        "isVisible": "true",
+        "read": false,
+        "title": "You Only Live Twice"
     }
 ]

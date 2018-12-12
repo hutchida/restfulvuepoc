@@ -3,6 +3,7 @@
     <div class="row">
       <div class="col-sm-10">
         <h1>Books</h1>
+        <h3>Total number of records:  {{books.length}}</h3>
         <hr>
         <br>
         <br>
