@@ -229,7 +229,9 @@ export default {
       const payload = {
         title: this.editForm.title,
         author: this.editForm.author,
-        read
+        read,
+        isVisible: this.editForm.isVisible,
+        id: this.editForm.id
       };
       this.updateBook(payload, this.editForm.id);
     },

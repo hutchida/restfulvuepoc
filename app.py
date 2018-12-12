@@ -30,6 +30,7 @@ BOOKS = data_loaded
 @app.route('/books', methods=['GET', 'POST'])
 def all_books():
     response_object = {'status': 'success'}
+    #ADD
     if request.method == 'POST':
         post_data = request.get_json()
         print('uuid generated then entry appended')
@@ -37,20 +38,21 @@ def all_books():
             'id': uuid.uuid4().hex,
             'title': post_data.get('title'),
             'author': post_data.get('author'),
-            'read': post_data.get('read')
+            'read': post_data.get('read'),
+            'isVisible': 'true'
         })
         response_object['message'] = 'Book added!'
         save_books(BOOKS)
+    #DISPLAY
     else:
-        print('not POST must be GET')
-        print(response_object)
         response_object['books'] = BOOKS
-        print(response_object)
+        
     return jsonify(response_object)
 
 @app.route('/books/<book_id>', methods=['PUT', 'DELETE'])
 def single_book(book_id):
     response_object = {'status': 'success'}
+    #UPDATE
     if request.method == 'PUT':
         post_data = request.get_json()
         remove_book(book_id)    
@@ -58,10 +60,12 @@ def single_book(book_id):
             'id': post_data.get('id'),
             'title': post_data.get('title'),
             'author': post_data.get('author'),
-            'read': post_data.get('read')
+            'read': post_data.get('read'),
+            'isVisible': post_data.get('isVisible')
         })
         response_object['message'] = 'Book updated!'
         save_books(BOOKS)
+    #DELETE
     if request.method == 'DELETE':
         remove_book(book_id)
         response_object['message'] = 'Book removed!'
