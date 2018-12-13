@@ -25,7 +25,18 @@ with open('data.json') as data_file:
 #for entry in data_loaded:
 #    entry['id'] = uuid.uuid4().hex
 
-BOOKS = data_loaded
+
+# Filter python objects with list comprehensions
+def FilterReadYes(data_loaded):
+    return [x for x in data_loaded if x['read'] == True]
+def FilterReadNo(data_loaded):
+    return [x for x in data_loaded if x['read'] == False]
+def FilterRangeOfEntries(data_loaded, lower, upper):
+    return [x for x in data_loaded[0:10]]
+#BOOKS = FilterReadYes(data_loaded)
+#BOOKS = FilterReadNo(data_loaded)
+BOOKS = FilterRangeOfEntries(data_loaded,lower,upper)
+#BOOKS = data_loaded
 
 @app.route('/books', methods=['GET', 'POST'])
 def all_books():
