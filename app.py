@@ -32,10 +32,10 @@ def FilterReadYes(data_loaded):
 def FilterReadNo(data_loaded):
     return [x for x in data_loaded if x['read'] == False]
 def FilterRangeOfEntries(data_loaded, lower, upper):
-    return [x for x in data_loaded[0:10]]
+    return [x for x in data_loaded[lower:upper]]
 #BOOKS = FilterReadYes(data_loaded)
 #BOOKS = FilterReadNo(data_loaded)
-BOOKS = FilterRangeOfEntries(data_loaded,lower,upper)
+BOOKS = FilterRangeOfEntries(data_loaded,0,10)
 #BOOKS = data_loaded
 
 @app.route('/books', methods=['GET', 'POST'])
@@ -43,6 +43,8 @@ def all_books():
     response_object = {'status': 'success'}
     #ADD
     if request.method == 'POST':
+        #if post has variables lower and upper
+        #response_object['books'] = FilterRangeOfEntries(data_loaded,lower,upper)
         post_data = request.get_json()
         print('uuid generated then entry appended')
         BOOKS.append({
