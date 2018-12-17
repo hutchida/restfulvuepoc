@@ -61,11 +61,13 @@ def all_books():
     return jsonify(response_object)
 
 
-@app.route('/books?count=<lower>&pageSize=<pageSize>', methods=['GET', 'POST'])
-def range_of_books():
+#@app.route('/range?count=<lower>&pageSize=<pageSize>', methods=['GET'])
+@app.route('/range', methods=['GET'])
+def range_of_books():    
+    lower = int(request.args.get('count'))
+    upper = lower + int(request.args.get('pageSize'))
     response_object = {'status': 'success'}
-    #display a range of entries
-    response_object['books'] = FilterRangeOfEntries(data_loaded,lower,lower + pageSize)
+    response_object['books'] = FilterRangeOfEntries(data_loaded,lower,upper)
     return jsonify(response_object)
 
 @app.route('/books/<book_id>', methods=['PUT', 'DELETE'])
