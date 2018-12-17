@@ -61,7 +61,7 @@ def all_books():
     return jsonify(response_object)
 
 
-@app.route('/books/count=<lower>&pageSize=<pageSize>', methods=['GET', 'POST'])
+@app.route('/books?count=<lower>&pageSize=<pageSize>', methods=['GET', 'POST'])
 def range_of_books():
     response_object = {'status': 'success'}
     #display a range of entries
