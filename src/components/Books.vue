@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-sm-10">
         <h1>Books</h1>
-        <h3>Total number of records:  {{books.length}}</h3>
+        <h3>Total number of records: {{books.length}}</h3>
         <hr>
         <br>
         <br>
@@ -11,10 +11,21 @@
         <button type="button" class="btn btn-success btn-sm" v-b-modal.book-modal>Add Book</button>
         <br>
         <br>
-        <input v-model="searchTerm" class="form-control" placeholder="Search books"  v-on:input="onSearch">
+        <input
+          v-model="searchTerm"
+          class="form-control"
+          placeholder="Search books"
+          v-on:input="onSearch"
+        >
         <br>
         <br>
-        <table class="table table-hover">
+        <table
+          class="table table-hover"
+          v-infinite-scroll="loadMore"
+          infinite-scroll-disabled="busy"
+          infinite-scroll-throttle-delay="500"
+          infinite-scroll-immediate-check="false"
+        >
           <thead>
             <tr>
               <th scope="col">Title</th>
@@ -95,7 +106,8 @@
         <b-form-group
           id="form-author-edit-group"
           label="Author:"
-          label-for="form-author-edit-input">
+          label-for="form-author-edit-input"
+        >
           <b-form-input
             id="form-author-edit-input"
             type="text"
@@ -137,7 +149,8 @@ export default {
       },
       message: "",
       showMessage: false,
-      searchTerm: ''
+      searchTerm: "",
+      busy: false
     };
   },
   components: {
@@ -254,22 +267,33 @@ export default {
       this.$refs.addBookModal.hide();
       this.initForm();
     },
-    onSearch(){
+    onSearch() {
       // Loop over each book in array.
       this.books.map(book => {
-
         // If we have a search term and the length is > 2 characters proceed...
-        if(this.searchTerm && this.searchTerm.length > 2){
-
+        if (this.searchTerm && this.searchTerm.length > 2) {
           // Set book to visible if book title includes search term.
           book.isVisible = book.title.includes(this.searchTerm);
-
         } else {
-
           // On all other senarios set book visible to true.
           book.isVisible = true;
         }
       });
+    },
+    loadMore: function() {
+      if (!this.busy) {
+        this.busy = true;
+        axios
+          .get("http://localhost:5000/books")
+          .then(res => {
+            res.data.books.forEach(book => this.books.push(book));
+            this.busy = false;
+          })
+          .catch(error => {
+            // eslint-disable-next-line
+            console.error(error);
+          });
+      }
     }
   },
   created() {
