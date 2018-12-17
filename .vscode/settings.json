@@ -16,5 +16,6 @@
         "package-lock.json": true,
         "__pycache__": true,
         "static/": false
-        }
+        },
+        "python.linting.enabled": false
 }
