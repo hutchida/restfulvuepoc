@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="col-sm-10">
+      <div class="col-sm-12">
         <h1>Books</h1>
         <h3>Total number of records: {{books.length}}</h3>
         <hr>
@@ -20,7 +20,7 @@
         <br>
         <br>
         <table
-          class="table table-hover"
+          class="table table-hover table-bordered table-striped"
           v-infinite-scroll="loadMore"
           infinite-scroll-disabled="busy"
           infinite-scroll-throttle-delay="500"
@@ -31,7 +31,7 @@
               <th scope="col">Title</th>
               <th scope="col">Author</th>
               <th scope="col">Read?</th>
-              <th></th>
+              <th width="155"></th>
             </tr>
           </thead>
           <tbody>
