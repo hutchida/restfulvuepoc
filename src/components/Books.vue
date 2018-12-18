@@ -150,7 +150,8 @@ export default {
       message: "",
       showMessage: false,
       searchTerm: "",
-      busy: false
+      busy: false,
+      isAllBooks: false,
     };
   },
   components: {
@@ -158,7 +159,7 @@ export default {
   },
   methods: {
     getBooks() {
-      const path = "http://localhost:5000/books";
+      const path = `http://127.0.0.1:5000/range?start=${this.books.length}&size=10`;
       axios
         .get(path)
         .then(res => {
@@ -281,13 +282,14 @@ export default {
       });
     },
     loadMore: function() {
-      if (!this.busy) {
+      if (!this.busy && !this.isAllBooks) {
         this.busy = true;
         axios
-          .get("http://localhost:5000/books")
+          .get(`http://127.0.0.1:5000/range?start=${this.books.length}&size=5`)
           .then(res => {
             res.data.books.forEach(book => this.books.push(book));
             this.busy = false;
+            this.isAllBooks = res.data.books.length === 0;
           })
           .catch(error => {
             // eslint-disable-next-line
