@@ -28,21 +28,35 @@
         >
           <thead>
             <tr>
-              <th scope="col">Title</th>
-              <th scope="col">Author</th>
-              <th scope="col">Read?</th>
+              <th scope="col">Practice Area</th>
+              <th scope="col" style="background-color: #E6F9F0">Search Term</th>
+              <th scope="col" style="border-left: solid 1px #EEEEEE">Label</th>
+              <th scope="col">ID</th>
+              <th scope="col">Type</th>
+              <th scope="col" style="border-left: solid 1px #EEEEEE">Label</th>
+              <th scope="col">ID</th>
+              <th scope="col">Type</th>
+              <th scope="col" style="border-left: solid 1px #EEEEEE">Label</th>
+              <th scope="col">ID</th>
+              <th scope="col">Type</th>
               <th width="155"></th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="(book, index) in books" :key="index">
               <template v-if="book.isVisible">
-                <td>{{ book.title }}</td>
-                <td>{{ book.author }}</td>
-                <td>
-                  <span v-if="book.read">Yes</span>
-                  <span v-else>No</span>
-                </td>
+                <td>{{ book.pa }}</td>
+                <td style="background-color: #E6F9F0">{{ book.searchterm }}</td>
+                <td style="border-left: solid 1px #EEEEEE">{{ book.title1 }}</td>
+                <td>{{ book.location1 }}</td>
+                <td>{{ book.type1 }}</td>
+                <td>{{ book.title2 }}</td>
+                <td>{{ book.location2 }}</td>
+                <td>{{ book.type2 }}</td>
+                <td>{{ book.title3 }}</td>
+                <td>{{ book.location3 }}</td>
+                <td>{{ book.type3 }}</td>
+                
                 <td>
                   <button
                     type="button"
@@ -94,32 +108,148 @@
 
     <b-modal ref="editBookModal" id="book-update-modal" title="Update" hide-footer>
       <b-form @submit="onSubmitUpdate" @reset="onResetUpdate" class="w-100">
-        <b-form-group id="form-title-edit-group" label="Title:" label-for="form-title-edit-input">
+        <b-form-group id="form-title-edit-group" label="Practice Area:" label-for="form-title-edit-input">
           <b-form-input
             id="form-title-edit-input"
             type="text"
-            v-model="editForm.title"
+            v-model="editForm.pa"
             required
-            placeholder="Enter title"
+            placeholder="Enter Practice Area"
           ></b-form-input>
         </b-form-group>
         <b-form-group
           id="form-author-edit-group"
-          label="Author:"
+          label="Search Term:"
           label-for="form-author-edit-input"
         >
           <b-form-input
             id="form-author-edit-input"
             type="text"
-            v-model="editForm.author"
+            v-model="editForm.searchterm"
             required
-            placeholder="Enter author"
+            placeholder="Enter search term"
           ></b-form-input>
         </b-form-group>
-        <b-form-group id="form-read-edit-group">
-          <b-form-checkbox-group v-model="editForm.read" id="form-checks">
-            <b-form-checkbox value="true">Read?</b-form-checkbox>
-          </b-form-checkbox-group>
+
+        <b-form-group
+          id="form-author-edit-group"
+          label="Label:"
+          label-for="form-author-edit-input"
+        >
+          <b-form-input
+            id="form-author-edit-input"
+            type="text"
+            v-model="editForm.title1"
+            required
+            placeholder="Enter label"
+          ></b-form-input>
+        </b-form-group>
+        <b-form-group
+          id="form-author-edit-group"
+          label="ID:"
+          label-for="form-author-edit-input"
+        >
+          <b-form-input
+            id="form-author-edit-input"
+            type="text"
+            v-model="editForm.location1"
+            required
+            placeholder="Enter ID"
+          ></b-form-input>
+        </b-form-group>
+        <b-form-group
+          id="form-author-edit-group"
+          label="Type:"
+          label-for="form-author-edit-input"
+        >
+          <b-form-input
+            id="form-author-edit-input"
+            type="text"
+            v-model="editForm.type1"
+            required
+            placeholder="Enter type"
+          ></b-form-input>
+        </b-form-group>
+        
+        <b-form-group
+          id="form-author-edit-group"
+          label="Label:"
+          label-for="form-author-edit-input"
+        >
+          <b-form-input
+            id="form-author-edit-input"
+            type="text"
+            v-model="editForm.title2"
+            required
+            placeholder="Enter label"
+          ></b-form-input>
+        </b-form-group>
+        <b-form-group
+          id="form-author-edit-group"
+          label="ID:"
+          label-for="form-author-edit-input"
+        >
+          <b-form-input
+            id="form-author-edit-input"
+            type="text"
+            v-model="editForm.location2"
+            required
+            placeholder="Enter ID"
+          ></b-form-input>
+        </b-form-group>
+        <b-form-group
+          id="form-author-edit-group"
+          label="Type:"
+          label-for="form-author-edit-input"
+        >
+          <b-form-input
+            id="form-author-edit-input"
+            type="text"
+            v-model="editForm.type2"
+            required
+            placeholder="Enter type"
+          ></b-form-input>
+        </b-form-group>
+
+        
+        <b-form-group
+          id="form-author-edit-group"
+          label="Label:"
+          label-for="form-author-edit-input"
+        >
+          <b-form-input
+            id="form-author-edit-input"
+            type="text"
+            v-model="editForm.title3"
+            required
+            placeholder="Enter label"
+          ></b-form-input>
+        </b-form-group>
+        <b-form-group
+          id="form-author-edit-group"
+          label="ID:"
+          label-for="form-author-edit-input"
+        >
+          <b-form-input
+            id="form-author-edit-input"
+            type="text"
+            v-model="editForm.location3"
+            required
+            placeholder="Enter ID"
+          ></b-form-input>
+        </b-form-group>
+        <b-form-group
+          id="form-author-edit-group"
+          label="Type:"
+          label-for="form-author-edit-input"
+        >
+          <b-form-input
+            id="form-author-edit-input"
+            type="text"
+            v-model="editForm.type3"
+            required
+            placeholder="Enter type"
+          ></b-form-input>
         </b-form-group>
         <b-button type="submit" variant="primary">Update</b-button>
         <b-button type="reset" variant="danger">Cancel</b-button>
@@ -139,13 +269,13 @@ export default {
       addBookForm: {
         title: "",
         author: "",
-        read: []
+        //read: []
       },
       editForm: {
-        id: "",
+        lrid: "",
         title: "",
-        author: "",
-        read: []
+        author: ""//,
+        //read: []
       },
       message: "",
       showMessage: false,
@@ -186,7 +316,8 @@ export default {
         });
     },
     onDeleteBook(book) {
-      this.removeBook(book.id);
+      console.log(book.lrid)
+      this.removeBook(book.lrid);
     },
     updateBook(payload, bookID) {
       const path = `http://localhost:5000/books/${bookID}`;
@@ -224,11 +355,19 @@ export default {
     initForm() {
       this.addBookForm.title = "";
       this.addBookForm.author = "";
-      this.addBookForm.read = [];
-      this.editForm.id = "";
-      this.editForm.title = "";
-      this.editForm.author = "";
-      this.editForm.read = [];
+      //this.addBookForm.read = [];
+      this.editForm.pa = "";
+      this.editForm.searchterm = "";
+      this.editForm.title1 = "";
+      this.editForm.location1 = "";
+      this.editForm.type1 = "";
+      this.editForm.title2 = "";
+      this.editForm.location2 = "";
+      this.editForm.type2 = "";
+      this.editForm.title3 = "";
+      this.editForm.location3 = "";
+      this.editForm.type3 = "";
+      //this.editForm.read = [];
     },
     onResetUpdate(evt) {
       evt.preventDefault();
@@ -239,26 +378,36 @@ export default {
     onSubmitUpdate(evt) {
       evt.preventDefault();
       this.$refs.editBookModal.hide();
-      let read = false;
-      if (this.editForm.read[0]) read = true;
+      //let read = false;
+      //if (this.editForm.read[0]) read = true;
       const payload = {
-        title: this.editForm.title,
-        author: this.editForm.author,
-        read,
+        pa: this.editForm.pa,
+        searchterm: this.editForm.searchterm,
+        title1: this.editForm.title1,
+        location1: this.editForm.location1,
+        type1: this.editForm.type1,
+        title2: this.editForm.title2,
+        location2: this.editForm.location2,
+        type2: this.editForm.type2,
+        title3: this.editForm.title3,
+        location3: this.editForm.location3,
+        type3: this.editForm.type3,
         isVisible: this.editForm.isVisible,
-        id: this.editForm.id
+        lrid: this.editForm.lrid
       };
-      this.updateBook(payload, this.editForm.id);
+      
+      this.updateBook(payload, this.editForm.lrid);
+      console.log(payload);
     },
     onSubmit(evt) {
       evt.preventDefault();
       this.$refs.addBookModal.hide();
-      let read = false;
-      if (this.addBookForm.read[0]) read = true;
+      //let read = false;
+      //if (this.addBookForm.read[0]) read = true;
       const payload = {
         title: this.addBookForm.title,
         author: this.addBookForm.author,
-        read // property shorthand
+        //read // property shorthand
       };
       this.addBook(payload);
       this.initForm();
