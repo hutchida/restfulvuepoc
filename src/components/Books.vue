@@ -377,27 +377,9 @@ export default {
     },
     onSubmitUpdate(evt) {
       evt.preventDefault();
-      this.$refs.editBookModal.hide();
-      //let read = false;
-      //if (this.editForm.read[0]) read = true;
-      const payload = {
-        pa: this.editForm.pa,
-        searchterm: this.editForm.searchterm,
-        title1: this.editForm.title1,
-        location1: this.editForm.location1,
-        type1: this.editForm.type1,
-        title2: this.editForm.title2,
-        location2: this.editForm.location2,
-        type2: this.editForm.type2,
-        title3: this.editForm.title3,
-        location3: this.editForm.location3,
-        type3: this.editForm.type3,
-        isVisible: this.editForm.isVisible,
-        lrid: this.editForm.lrid
-      };
-      
-      this.updateBook(payload, this.editForm.lrid);
-      console.log(payload);
+      this.$refs.editBookModal.hide();      
+      this.updateBook(this.editForm, this.editForm.lrid)
+      console.log(this.editForm);
     },
     onSubmit(evt) {
       evt.preventDefault();
