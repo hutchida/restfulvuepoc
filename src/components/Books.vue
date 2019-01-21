@@ -261,22 +261,14 @@
 <script>
 import axios from "axios";
 import Alert from "./Alert";
+import { FormModel } from '../models/FormModel'
 
 export default {
   data() {
     return {
       books: [],
-      addBookForm: {
-        title: "",
-        author: "",
-        //read: []
-      },
-      editForm: {
-        lrid: "",
-        title: "",
-        author: ""//,
-        //read: []
-      },
+      addBookForm: new FormModel(),
+      editForm:  new FormModel(),
       message: "",
       showMessage: false,
       searchTerm: "",
@@ -353,21 +345,8 @@ export default {
         });
     },
     initForm() {
-      this.addBookForm.title = "";
-      this.addBookForm.author = "";
-      //this.addBookForm.read = [];
-      this.editForm.pa = "";
-      this.editForm.searchterm = "";
-      this.editForm.title1 = "";
-      this.editForm.location1 = "";
-      this.editForm.type1 = "";
-      this.editForm.title2 = "";
-      this.editForm.location2 = "";
-      this.editForm.type2 = "";
-      this.editForm.title3 = "";
-      this.editForm.location3 = "";
-      this.editForm.type3 = "";
-      //this.editForm.read = [];
+      this.addBookForm = new FormModel();
+      this.editForm = new FormModel();
     },
     onResetUpdate(evt) {
       evt.preventDefault();
@@ -379,19 +358,11 @@ export default {
       evt.preventDefault();
       this.$refs.editBookModal.hide();      
       this.updateBook(this.editForm, this.editForm.lrid)
-      console.log(this.editForm);
     },
     onSubmit(evt) {
       evt.preventDefault();
       this.$refs.addBookModal.hide();
-      //let read = false;
-      //if (this.addBookForm.read[0]) read = true;
-      const payload = {
-        title: this.addBookForm.title,
-        author: this.addBookForm.author,
-        //read // property shorthand
-      };
-      this.addBook(payload);
+      this.addBook(this.addBookForm);
       this.initForm();
     },
     onReset(evt) {
